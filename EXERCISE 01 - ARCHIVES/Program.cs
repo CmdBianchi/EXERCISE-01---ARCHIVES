@@ -11,12 +11,15 @@ namespace EXERCISE_01___ARCHIVES {
             try {
                 FileInfo fileInfo = new FileInfo(sourcePath);
                 fileInfo.CopyTo(targetPath);
+                string[] lines = File.ReadAllLines(sourcePath);
+                foreach (string line in lines){
+                    Console.WriteLine();
+                }
             }
             catch(IOException e) {
                 Console.WriteLine("An error occurred");
                 Console.WriteLine(e.Message);
             }
-
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////
